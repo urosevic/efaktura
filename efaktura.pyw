@@ -37,6 +37,10 @@ icon_path = os.path.join(os.path.dirname(__file__), 'efaktura.ico')
 if os.path.isfile(icon_path):
     app.iconbitmap(icon_path)
 
+# Направи директоријум ако недостаје
+efakture_dir = os.path.join(os.path.dirname(__file__), "efakture")
+if (os.path.isdir(efakture_dir) != True):
+    os.makedirs(efakture_dir)
 
 # Функција за учитавање АПИ кључа
 def get_api_key():
@@ -52,7 +56,6 @@ def get_api_key():
                 pattern = re.compile(
                     "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$")
                 if pattern.match(ApiKey):
-                    print(f'АПИ кључ {ApiKey} је у исправном облику.')
                     return ApiKey
                 else:
                     messagebox.showerror(

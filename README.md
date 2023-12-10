@@ -12,6 +12,15 @@
 
 Да би уопште могли да покренете скрипт `efaktura.pyw` неопходно је да на вашем рачунару имате инсталиран [Python 3](https://www.python.org/downloads/).
 
+Ако приликом покретања скрипта добијете грешку
+```
+ModuleNotFoundError: No module named 'requests'
+```
+неопходно је да инсталирате и библиотеку `requests` покретањем команде:
+```
+pip install requests
+```
+
 # Конфигурисање скрипта
 
 1. Пријавите се својим налогом на портал https://efaktura.mfin.gov.rs/
